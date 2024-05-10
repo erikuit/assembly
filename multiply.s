@@ -1,6 +1,10 @@
-.global _start
+.global main
 
-_start:
+.section .rodata
+fmt:    .string "Product is %d\n"
+.section .text
+
+main:
     addi t0, x0, 19 
     addi t1, x0, 9
     addi t2, x0, 0 
@@ -27,6 +31,9 @@ Add:
     jal x0, Shift
 
 End:
-    add a0, zero, t2
-    addi a7, zero, 93
+    la a0, fmt
+    add a1, x0, t2
+    call printf
+    addi a0, x0, 0
+    addi a7, x0, 93
     ecall
