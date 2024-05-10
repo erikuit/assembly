@@ -1,3 +1,3 @@
 default:
-	riscv64-linux-gnu-as ${program}.s -o ./bin/${program}.o
-	riscv64-linux-gnu-gcc -o ./bin/${program} ./bin/${program}.o -nostdlib -static
+	riscv64-linux-gnu-as ${p}.s -o ./bin/${p}.o
+	riscv64-linux-gnu-gcc -o ./bin/${p} ./bin/${p}.o -no-pie -static
