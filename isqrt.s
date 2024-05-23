@@ -5,19 +5,16 @@ fmt:    .string "Result is %d\n"
 .section .text
 
 main:
-    addi x18, x0, 200 # N
-    addi x19, x0, 0  # Result
-    addi x20, x0, 0  # Sum
-    addi x21, x0, 1  # Odd
-    add x22, x20, x21  # Next sum
+    addi x18, x0, 17 # N
+    addi x19, x0, 0 # Result
+    addi x20, x0, 1 # Odd
+    addi x21, x20, 0 # Sum
 
 Loop:
-    blt x18, x22, End
-    add x20, x20, x21
-    addi x21, x21, 2
+    blt x18, x21, End
+    addi x20, x20, 2
+    add x21, x21, x20
     addi x19, x19, 1
-    add x22, x20, x21
-
     blt x0, x18, Loop
 
 End:
